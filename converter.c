@@ -28,6 +28,9 @@ void converter(int argc, char ** argv) {
     if (strcmp(argv[i], "-hex") ==  0) {
       for (int k = 1; k < i; k++) {
         convert_text_to_hex(argv[k]);
+        if (k < i-1) {
+          printf("20");
+        }
       }
       printf("\n");
     } else if (strcmp(argv[i], "-binary") == 0) {
@@ -46,7 +49,6 @@ void convert_text_to_hex(const char * buffer) {
   for (int i = 0; i < strlen(buffer); i++) { 
     printf("%02X", buffer[i]);
   }
-  printf("20");
 }
 
 // Next:
