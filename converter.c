@@ -51,30 +51,17 @@ void convert_text_to_hex(const char * buffer) {
   }
 }
 
-// Next:
-// Remove the string from buffer and
-// simply print the result of the conversion directly.
 void convert_text_to_binary(const char * buffer) {
   size_t len = strlen(buffer);
-  char * binary_string = (char*) malloc(len * CHAR_BIT + 1);
-  char * ptr = binary_string;
   for (size_t i = 0; i < len; i++) {
     char target = buffer[i];
     for (int k = CHAR_BIT - 1; k >=0; k--) {
       if (target & (1 << k)) {
-        *ptr++ = '1';
+        printf("%c", '1');
       } else {
-        *ptr++ = '0';
+        printf("%c", '0');
       }
+      if (k == 0) printf(" ");
     }
   }
-  *ptr = '\0';
-  for (int l = 0; l < strlen(binary_string); l++) {
-    if ((l % 8 == 0 && l > 0)) {
-      printf(" ");
-    }
-    printf("%c", binary_string[l]);
-  }
-  printf(" ");
-  free(binary_string);
 }
