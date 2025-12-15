@@ -76,5 +76,5 @@ void convert_text_to_binary(const char * buffer) {
     printf("%c", binary_string[l]);
   }
   printf(" ");
-  free(ptr);
+  free(binary_string);
 }
