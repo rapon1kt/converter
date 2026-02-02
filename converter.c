@@ -19,10 +19,10 @@ void convert_text_to_binary(const char * buffer);
 
 void converter(int argc, char ** argv) {
   if (strcmp(argv[1], "-help") == 0) {
-      printf("<text>  : text formatted in ASCII-UTF8");
-      printf("-binary : transform text in binary\n");
-      printf("-hex    : transform text in hexadecimal\n");
-      printf("-help   : show all possibles commands\n");
+    printf("<text>  : text formatted in ASCII-UTF8\n");
+    printf("-binary : transform text in binary\n");
+    printf("-hex    : transform text in hexadecimal\n");
+    printf("-help   : show all possibles commands\n");
   }
   for (int i = 2; i < argc; i++) {
     if (strcmp(argv[i], "-hex") ==  0) {
